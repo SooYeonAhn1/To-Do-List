@@ -3,12 +3,12 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<h2>Login</h2>
-
-<p>If you are a new user, go to the 
-    <button type="button" id="registerRedirect">register</button> page.
-</p>
-
+<h1>Login</h1>
+<div class="gotoRegister">
+    <p>If you are a new user, go to the 
+        <a href="/register">register</a> page.
+    </p>
+</div>
 <form method="POST" action="/login">
     <div>
         <input type="text" id="username" name="username" placeholder="Username" required><br>

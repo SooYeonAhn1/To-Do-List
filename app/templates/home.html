@@ -5,13 +5,15 @@
 {% block content %}
 <h1>Welcome to the To-Do List website!</h1>
 
-<p>
-    If you are an existing user, go to the
-    <button type="button" id="loginRedirect">log in</button> page.
-</p>
-<p>
-    If you are a new user, go to the
-    <button type="button" id="registerRedirect">sign up</button> page to register.
-</p>
+<div class="homeToSignIn">
+    <p>
+        If you are an existing user, go to the
+        <a href="/login">log in</a> page.
+    </p>
+    <p>
+        If you are a new user, go to the
+        <a href="/register">sign up</a> page to register.
+    </p>
+</div>
 
 {% endblock %}

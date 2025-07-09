@@ -86,6 +86,8 @@ function setupTodosPage() {
                 alert("Please enter a task.");
                 return;
             }
+            const li = document.createElement('li');
+            li.classList.add('todo-item'); // optional for CSS styling
 
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
@@ -96,8 +98,9 @@ function setupTodosPage() {
             label.textContent = todo;
             label.prepend(checkbox);
 
-            container.prepend(document.createElement('br'));
-            container.prepend(label);
+            li.appendChild(label);
+            container.appendChild(li);
+
 
             todoInput.value = '';
         });

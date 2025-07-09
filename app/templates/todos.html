@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}To-Do List{% endblock %}
+
+{% block content %}
+<h1>To-Do List</h1>
+
+<p id="date"></p>
+
+<div id="checkboxContainer">
+    <input type="text" id="todo" placeholder="Enter a task">
+    <button id="createCheckbox" type="button">Submit</button>
+</div>
+{% endblock %}

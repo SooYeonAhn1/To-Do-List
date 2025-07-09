@@ -3,17 +3,19 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<h1>Login</h1>
-<div class="gotoRegister">
-    <p>If you are a new user, go to the 
+<div class="login-wrapper">
+  <div class="login-box">
+    <h1>Login</h1>
+    <div class="gotoRegister">
+      <p>If you are a new user, go to the 
         <a href="/register">register</a> page.
-    </p>
-</div>
-<form method="POST" action="/login">
-    <div>
-        <input type="text" id="username" name="username" placeholder="Username" required><br>
-        <input type="password" id="password" name="password" placeholder="Password" required><br>
-        <button type="submit" id="submitUsername">Submit</button><br>
+      </p>
     </div>
-</form>
+    <form method="POST" action="/login">
+      <input type="text" id="username" name="username" placeholder="Username" required><br>
+      <input type="password" id="password" name="password" placeholder="Password" required><br>
+      <button type="submit" id="submitUsername">Submit</button>
+    </form>
+  </div>
+</div>
 {% endblock %}

@@ -3,12 +3,14 @@
 {% block title %}To-Do List{% endblock %}
 
 {% block content %}
-<h1>To-Do List</h1>
+
+<div class="ToDo-wrapper"><h1>To-Do List</h1></div>
 
 <!-- <p id="date"></p> -->
-
-<div id="checkboxContainer">
-    <input type="text" id="todo" placeholder="Enter a task">
-    <button type="button" id="createCheckbox" name="newTodo">Submit</button>
+<div class="checkbox-wrapper">
+    <div id="checkboxContainer" class="checkbox-box">
+        <input type="text" id="todo" placeholder="Enter a task">
+        <button type="button" id="createCheckbox" name="newTodo">Submit</button>
+    </div>
 </div>
 {% endblock %}

@@ -3,17 +3,15 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<h1>Welcome to the To-Do List website!</h1>
+<div class="welcome-wrapper">
+  <div class="welcome-box">
+    <h1>Welcome to the To-Do List website!</h1>
 
-<div class="homeToSignIn">
-    <p>
-        If you are an existing user, go to the
-        <a href="/login">log in</a> page.
-    </p>
-    <p>
-        If you are a new user, go to the
-        <a href="/register">sign up</a> page to register.
-    </p>
+    <div class="homeToSignIn">
+      <p>If you are an existing user, go to the <a href="/login">log in</a> page.</p>
+      <p>If you are a new user, go to the <a href="/register">sign up</a> page to register.</p>
+    </div>
+  </div>
 </div>
 
 {% endblock %}

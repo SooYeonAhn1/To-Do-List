@@ -9,8 +9,10 @@
 <!-- <p id="date"></p> -->
 <div class="checkbox-wrapper">
     <div id="checkboxContainer" class="checkbox-box">
-        <input type="text" id="todo" placeholder="Enter a task">
-        <button type="button" id="createCheckbox" name="newTodo">Submit</button>
+        <div class="input-wrapper">
+            <input type="text" id="todo" maxlength=100 placeholder="Enter a task">
+            <button type="button" id="submitBtn" class='submitBtn' name="newTodo">+</button>
+        </div>
         <ul id="todo-list"></ul>
     </div>
 </div>

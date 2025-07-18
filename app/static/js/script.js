@@ -78,7 +78,7 @@ function setupTodosPage() {
     const input = document.getElementById('todo');
     const list = document.getElementById('todo-list');
     const container = document.getElementById("checkboxContainer");
-    const createBtn = document.getElementById("createCheckbox");
+    const createBtn = document.getElementById("submitBtn");
 
     let todos = JSON.parse(localStorage.getItem('todos')) || [];
     renderTodos();
@@ -124,7 +124,7 @@ function setupTodosPage() {
 
 
             const btn = document.createElement('button');
-            btn.class = "deleteBtn";
+            btn.className = "deleteBtn";
             btn.textContent = 'x';
             btn.onclick = () => deleteTodo(index);
 

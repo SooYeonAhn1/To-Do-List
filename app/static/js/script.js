@@ -75,34 +75,105 @@ function setupLoginPage() {
 
 // ToDos
 function setupTodosPage() {
-    const createBtn = document.getElementById("createCheckbox");
-    const todoInput = document.getElementById("todo");
+    const input = document.getElementById('todo');
+    const list = document.getElementById('todo-list');
     const container = document.getElementById("checkboxContainer");
+    const createBtn = document.getElementById("createCheckbox");
 
-    if (createBtn && todoInput && container) {
+    let todos = JSON.parse(localStorage.getItem('todos')) || [];
+    renderTodos();
+
+    // addTodo()
+    if (createBtn && input && container) {
         createBtn.addEventListener("click", () => {
-            const todo = todoInput.value.trim();
+            const todo = input.value.trim();
             if (todo === "") {
                 alert("Please enter a task.");
                 return;
-            }
+            }            
+
+            todos.push(todo);
+            localStorage.setItem('todos', JSON.stringify(todos));
+            input.value = '';
+            renderTodos();
+        });
+    }
+
+    function deleteTodo(index) {
+        todos.splice(index, 1);
+        localStorage.setItem('todos', JSON.stringify(todos));
+        renderTodos();
+    }
+
+    function renderTodos() {
+        list.innerHTML = '';
+        todos.forEach((todo, index) => {
             const li = document.createElement('li');
-            li.classList.add('todo-item'); // optional for CSS styling
+            li.className = 'todo-item';
+
+            const taskRow = document.createElement('div');
+            taskRow.className = 'task-row';
 
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
-            checkbox.id = 'dynamicCheckbox' + Date.now();
+            checkbox.class = 'dynamicCheckbox';
             checkbox.name = 'dynamicCheckbox';
 
-            const label = document.createElement('label');
-            label.textContent = todo;
-            label.prepend(checkbox);
-
-            li.appendChild(label);
-            container.appendChild(li);
+            const taskText = document.createElement('span');
+            taskText.textContent = todo;
 
 
-            todoInput.value = '';
+            const btn = document.createElement('button');
+            btn.class = "deleteBtn";
+            btn.textContent = 'x';
+            btn.onclick = () => deleteTodo(index);
+
+            taskRow.appendChild(checkbox);
+            taskRow.appendChild(taskText);
+            taskRow.appendChild(btn);
+
+            // const deleteWrapper = document.createElement("div");
+            // deleteWrapper.className = "delete-wrapper";
+
+            
+
+            // deleteWrapper.append(btn);
+
+            
+            li.prepend(taskRow);
+            // li.appendChild(deleteWrapper);
+
+            list.appendChild(li);
         });
     }
+    // const createBtn = document.getElementById("createCheckbox");
+    // const todoInput = document.getElementById("todo");
+    // const container = document.getElementById("checkboxContainer");
+
+    // if (createBtn && todoInput && container) {
+    //     createBtn.addEventListener("click", () => {
+    //         const todo = todoInput.value.trim();
+    //         if (todo === "") {
+    //             alert("Please enter a task.");
+    //             return;
+    //         }
+    //         const li = document.createElement('li');
+    //         li.classList.add('todo-item'); // optional for CSS styling
+
+    //         const checkbox = document.createElement('input');
+    //         checkbox.type = 'checkbox';
+    //         checkbox.id = 'dynamicCheckbox' + Date.now();
+    //         checkbox.name = 'dynamicCheckbox';
+
+    //         const label = document.createElement('label');
+    //         label.textContent = todo;
+    //         label.prepend(checkbox);
+
+    //         li.appendChild(label);
+    //         container.appendChild(li);
+
+
+    //         todoInput.value = '';
+    //     });
+    // }
 }

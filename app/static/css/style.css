@@ -211,13 +211,39 @@ button:hover {
 }
 
 ul {
-  list-style-type: none; /* Removes bullet points */
-  padding-left: 0;       /* Removes default indentation */
+    list-style-type: none; /* Removes bullet points */
+    padding-left: 0;       /* Removes default indentation */
+    width: auto;
 }
 
-.todo-item {
-  margin-bottom: 5px;    /* Adjust spacing between items */
-  display: flex;
-  align-items: center;
-  gap: 8px;              /* Spacing between checkbox and label text */
+.todo-list {
+    margin-bottom: 10px;
+}
+
+.task-row {
+    display: flex;
+    align-items: center;   /* Ensures vertical alignment */
+    gap: 10px;              /* Controls spacing */
+}
+
+.task-row span {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.deleteBtn {
+    padding: 4px 8px;
+    font-size: 14px;
+    line-height: 1;
+    background-color: #d77171;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.dynamicCheckBox {
+    width: 18px;
+    height: 18px;
+    margin: 0;
 }

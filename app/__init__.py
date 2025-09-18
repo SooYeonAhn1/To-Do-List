@@ -1,12 +1,16 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_migrate import Migrate
 
 db = SQLAlchemy()
 login_manager = LoginManager()
 login_manager.login_view = 'login'
 
 app = Flask(__name__)
+
+migrate = Migrate(app, db)
+
 app.config.from_pyfile('../config.py')
 
 db.init_app(app)

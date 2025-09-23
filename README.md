@@ -1,7 +1,16 @@
 # To Do List
 
+This is a to-do list application where you can keep track of your daily tasks.
 
-The environment can be recreated with the following command (Linux):
+
+## Running the Project
+This program supports a docker build. To run this program via docker:
 ```
-$ pip install -r requirements.txt
+docker build -t to-do-list .
+docker run to-do-list
 ```
+
+
+## Demo
+
+A demo of this project is available through this [link] (https://to-do-list-1044938753285.us-central1.run.app/).

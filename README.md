@@ -13,4 +13,4 @@ docker run to-do-list
 
 ## Demo
 
-A demo of this project is available through this [link] (https://to-do-list-1044938753285.us-central1.run.app/).
+A demo of this project is available through this [link](https://to-do-list-1044938753285.us-central1.run.app/).
